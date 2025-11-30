@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Horario extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'empleado_id',
+        'fecha',
+        'dia',
+        'hi',
+        'hf',
+        'hid1',
+        'hfd1',
+        'hia',
+        'hfa',
+        'hrs_prog',
+    ];
+
+    public function empleado()
+    {
+        return $this->belongsTo(\App\Models\Empleado::class);
+    }
+}
